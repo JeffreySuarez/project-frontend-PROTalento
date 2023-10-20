@@ -3,7 +3,7 @@ import BotonRetroceder from "../components/BotonRetroceder";
 import Spinner from "../components/Spinner";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSnackbar } from "notistack";
+//import { useSnackbar } from "notistack";
 
 const Editar = () => {
   const [title, setTitle] = useState("");
@@ -12,7 +12,7 @@ const Editar = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
-  const { enqueueSnackbar } = useSnackbar();
+  //const { enqueueSnackbar } = useSnackbar();
 
   const client = axios.create({
     baseURL: `http://localhost:8081/books/${id}`,
@@ -48,12 +48,12 @@ const Editar = () => {
       .put(`http://localhost:8081/books/${id}`, data)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar('Libro editado con éxito', {variant: 'success'})
+        //enqueueSnackbar('Libro editado con éxito', {variant: 'success'})
         navigate("/home");
       })
       .catch((error) => {
         setLoading(false);
-        enqueueSnackbar('Error', {variant: 'error'})
+        //enqueueSnackbar('Error', {variant: 'error'})
         //alert("Ha ocurrido un error, porfavor revisa la consola");
         console.log(error);
       });
