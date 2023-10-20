@@ -10,7 +10,7 @@ const MostrarDetalleItem = () => {
 
   const { id } = useParams();
   const client = axios.create({
-    baseURL: `http://localhost:8081/books/${id}`
+    baseURL: `https://node-mongodb-api-urrn.onrender.com/books/${id}`
   });
 
   useEffect(() => {

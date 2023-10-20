@@ -15,7 +15,7 @@ const Editar = () => {
   //const { enqueueSnackbar } = useSnackbar();
 
   const client = axios.create({
-    baseURL: `http://localhost:8081/books/${id}`,
+    baseURL: `https://node-mongodb-api-urrn.onrender.com/books/${id}`,
   });
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Editar = () => {
     setLoading(true);
 
     axios
-      .put(`http://localhost:8081/books/${id}`, data)
+      .put(`https://node-mongodb-api-urrn.onrender.com/books/${id}`, data)
       .then(() => {
         setLoading(false);
         //enqueueSnackbar('Libro editado con éxito', {variant: 'success'})

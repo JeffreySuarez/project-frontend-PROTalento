@@ -14,7 +14,7 @@ const Eliminar = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:8081/books/${id}`)
+      .delete(`https://node-mongodb-api-urrn.onrender.com/books/${id}`)
       .then(() => {
         setLoading(false);
         //enqueueSnackbar('Libro eliminado con éxito', {variant: 'success'})
